@@ -55,11 +55,21 @@
             <div class="navbar-collapse collapse" id="navigation">
                 <div class="padding-nav">
                     <ul class="nav navbar-nav left">
-                        <li class = "active mystyle"><a href="index.php">Home</a></li>
-                        <li><a class = "mystyle" href="shop.php">Shop</a></li>
-                        <li><a class = "mystyle" href="checkout.php">My Account</a></li>
-                        <li><a class = "mystyle" href="cart.php">Go To Cart</a></li>
-                        <li><a class = "mystyle" href="contact.php">Contact Us</a></li>
+                    <li class="active">
+                           <a href="index.php">Home</a>
+                       </li>
+                       <li>
+                           <a href="shop.php">Shop</a>
+                       </li>
+                       <li>
+                           <a href="checkout.php">My Account</a>
+                       </li>
+                       <li>
+                           <a href="cart.php">Shopping Cart</a>
+                       </li>
+                       <li>
+                           <a href="contact.php">Contact Us</a>
+                       </li>
                     </ul>
                 </div><!--padding-nav end-->
                 <a href="cart.php" class="btn navbar-btn btn-primary right">
@@ -178,11 +188,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product1" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product1.png" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.47,500</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -196,11 +206,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product2" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product2.jpg" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.35,900</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -214,11 +224,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product3" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product3.png" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.54,500</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -232,11 +242,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product4" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product4.jpg" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.50,900</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -252,11 +262,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product1" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product1.png" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.47,500</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -270,11 +280,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product2" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product2.jpg" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.35,900</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -288,11 +298,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product3" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product3.png" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.54,500</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -306,11 +316,11 @@
             <div class="col-sm-6 col-sm-4 single">
                 <div class="product">
                     <a href="details.php" >
-                    <img class = "img-responsive" src="admin_area/product_images/Product4" alt="Product 1" >
+                    <img class = "img-responsive" src="admin_area/product_images/Product4.jpg" alt="Product 1" >
                     </a><!--admin_area end-->
                     <div class="text">
                         <h3><a href="details.php" >Our Signature Product</a></h3>
-                        <p class="price">$200</p>
+                        <p class="price">Rs.50,900</p>
                         <p class="button">
                         <a href="details.php" class="btn btn-default">View Details</a>
                         <a href="details.php" class="btn btn-primary">
@@ -324,6 +334,10 @@
         </div><!--row end-->
 
     </div><!--container end-->
+    
+    <?php
+    include("includes/footer.php");
+    ?>
     <script src = "js/jquery-331.min.js"></script>
     <script src = "js/bootstrap-337.min.js"></script>
 
