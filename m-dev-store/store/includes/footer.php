@@ -7,19 +7,19 @@
                     <li><a href="cart.php">Shopping Cart</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                     <li><a href="shop.php">Shop</a></li>
-                    <li><a href="checkout.php">My Account</a></li>
+                    <li><a href="customer/my_account.php">My Account</a></li>
                 </ul> <!-- ul Finish-->
                 <hr>
 
                 <h4>User Section</h4>
                 <ul><!-- ul Begin-->
                     <li><a href="checkout.php">Login</a></li>
-                    <li><a href="cutomer_register.php">Register</a></li>
+                    <li><a href="customer_register.php">Register</a></li>
                 </ul><!-- ul Finish-->
 
                 <hr class="hidden-md hidden-lg hidden sm">
             </div> <!-- col-sm-6 col-md-3 Finish-->
-                
+
             <div class="col-sm-6 col-md-3"><!-- col-sm-6 col-md-3 Begin-->
                 <h4>Top Products Categories</h4>
                     <ul><!-- ul Begin-->
@@ -85,14 +85,14 @@
 <div id="copyright"><!-- #copyright Begin -->
     <div class="container"><!-- container Begin -->
         <div class="col-md-6"><!-- col-md-6 Begin -->
-            
+
             <p class="pull-left">&copy; 2018 M-Dev Store All Rights Reserve</p>
-            
+
         </div><!-- col-md-6 Finish -->
         <div class="col-md-6"><!-- col-md-6 Begin -->
-            
+
             <p class="pull-right">Theme by: <a href="#">MrGhie</a></p>
-            
+
         </div><!-- col-md-6 Finish -->
     </div><!-- container Finish -->
 </div><!-- #copyright Finish -->

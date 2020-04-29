@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
-    
+
 
 </head>
 <body>
@@ -23,7 +23,7 @@
 
                 <ul class="menu">
                     <li><a href="customer_register.php"> Register | </a></li>
-                    <li><a href="checkout.php"> My Account | </a></li>
+                    <li><a href="customer/my_account.php"> My Account | </a></li>
                     <li><a href="cart.php"> Go To Cart | </a></li>
                     <li><a href="checkout.php"> Login Page</a></li>
 
@@ -62,7 +62,7 @@
                            <a href="shop.php">Shop</a>
                        </li>
                        <li>
-                           <a href="checkout.php">My Account</a>
+                           <a href="customer/my_account.php">My Account</a>
                        </li>
                        <li>
                            <a href="cart.php">Shopping Cart</a>
@@ -97,7 +97,7 @@
                 </div><!--collapse clearfix end-->
 
             </div><!--navbar-collapse collapse end--->
-        </div><!--container end-->     
+        </div><!--container end-->
     </div><!--navbar end-->
 
     <div id="content">  <!--content starts-->

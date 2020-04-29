@@ -1,3 +1,10 @@
+<?php
+
+include("includes/db.php");
+
+ ?>
+
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +15,7 @@
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
-    
+
 
 </head>
 <body>
@@ -62,7 +69,7 @@
                            <a href="shop.php">Shop</a>
                        </li>
                        <li>
-                           <a href="checkout.php">My Account</a>
+                           <a href="customer/my_account.php">My Account</a>
                        </li>
                        <li>
                            <a href="cart.php">Shopping Cart</a>
@@ -81,7 +88,7 @@
                         <span class="sr-only">Toggle Search</span>
                         <i class="fa fa-search"></i>
                     </button><!--btn btn-primary navbar-btn end-->
-                </div><!--navbar-collapse collapse right end-->
+                </div><!--navbar-col lapse collapse right end-->
 
                 <div class="collapse clearfix" id="search">
                     <form action="result.php" method = "get" class="navbar-form">
@@ -97,7 +104,7 @@
                 </div><!--collapse clearfix end-->
 
             </div><!--navbar-collapse collapse end--->
-        </div><!--container end-->     
+        </div><!--container end-->
     </div><!--navbar end-->
     <div class="container" id="slider">
         <div class="col-md-12">
@@ -109,27 +116,47 @@
                     <li data-target = "#myCarousel" data-slide-to = "3"></li>
                 </ol><!--carousel-indicator end-->
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="admin_area/slides_images/1.jpg" alt="slide image 1">
-                    </div><!--item end-->
-                    <div class="item">
-                        <img src="admin_area/slides_images/2.jpg" alt="slide image 2">
-                    </div><!--item end-->
-                    <div class="item">
-                        <img src="admin_area/slides_images/3.jpg" alt="slide image 3">
-                    </div><!--item end-->
-                    <div class="item">
-                        <img src="admin_area/slides_images/4.jpg" alt="slide image 4">
-                    </div><!--item end-->
+
+                  <?php
+                  $get_slides="select * from slider LIMIT 0,1";
+                  $run_slides =mysqli_query($con,$get_slides);
+                  while($row_slides=mysqli_fetch_array($run_slides)){
+                    $slide_name = $row_slides['slide_name'];
+                    $slide_image = $row_slides['slide_image'];
+
+                    echo "
+                    <div class='item active'>
+
+                      <img src='admin_area/slides_images/$slide_image'>
+
+                    </div>
+                    ";
+                  }
+                  $get_slides="select * from slider LIMIT 1,3";
+                  $run_slides =mysqli_query($con,$get_slides);
+                  while($row_slides=mysqli_fetch_array($run_slides)){
+                    $slide_name = $row_slides['slide_name'];
+                    $slide_image = $row_slides['slide_image'];
+
+                    echo "
+                    <div class='item'>
+
+                      <img src='admin_area/slides_images/$slide_image'>
+
+                    </div>
+                    ";
+                  }
+                   ?>
+
                 </div><!--carousel-inner end-->
                 <a href="#myCarousel" class="left carousel-control" data-slide = "prev">
                     <span class="glyphicon glyphicon-chevron-left"></span><!--glyphicon glyphicon-cevron-left end-->
-                    <span class="sr-only">Previous</span>   
+                    <span class="sr-only">Previous</span>
                 </a><!--left carousel-control end-->
 
                 <a href="#myCarousel" class="right carousel-control" data-slide = "next">
                     <span class="glyphicon glyphicon-chevron-right"></span><!--glyphicon glyphicon-cevron-right end-->
-                    <span class="sr-only">Next</span>   
+                    <span class="sr-only">Next</span>
                 </a><!--right carousel-control end-->
             </div><!--carousel slide end-->
         </div><!--col-md-12 end-->
@@ -334,7 +361,7 @@
         </div><!--row end-->
 
     </div><!--container end-->
-    
+
     <?php
     include("includes/footer.php");
     ?>
@@ -342,7 +369,7 @@
     <script src = "js/bootstrap-337.min.js"></script>
 
 
-    
+
 
 
 </body>
