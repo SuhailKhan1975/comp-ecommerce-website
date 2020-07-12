@@ -23,11 +23,21 @@
             <div class="col-sm-6 col-md-3"><!-- col-sm-6 col-md-3 Begin-->
                 <h4>Top Products Categories</h4>
                     <ul><!-- ul Begin-->
-                        <li><a href="#">Laptops</a></li>
-                        <li><a href="#">Desktop Computers</a></li>
-                        <li><a href="#">Hard Drives</a></li>
-                        <li><a href="#">USB Flash Drives</a></li>
-                        <li><a href="#">Softwares</a></li>
+                        <?php 
+                        $get_p_cats ="select * from product_categories";
+                        $run_p_cats = mysqli_query($con,$get_p_cats);
+                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                            $p_cat_id = $row_p_cats['p_cat_id'];
+                            $p_cat_title = $row_p_cats['p_cat_title'];
+                            echo "
+                            <li>
+                                <a href='shop.php?p_cat=$p_cat_id'>
+                                $p_cat_title
+                                </a>
+                            </li>
+                            ";
+                        }
+                        ?>
                     </ul><!-- ul Finish-->
                     <hr class="hidden-md hidden-lg">
             </div><!-- col-sm-6 col-md-3 Finish-->

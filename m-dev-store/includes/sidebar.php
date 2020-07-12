@@ -6,11 +6,7 @@
     <div class="panel-body"><!-- panel-body Begin -->
         <ul class="nav nav-pills nav-stacked category-menu"><!-- nav nav-pills nav-stacked category-menu Begin -->
 
-        <li><a href="#">Laptops</a></li>
-        <li><a href="#">Desktop Computers</a></li>
-        <li><a href="#">Hard Drives</a></li>
-        <li><a href="#">USB Flash Drives</a></li>
-        <li><a href="#">Softwares</a></li>
+       <?php getPCats();?>
 
         </ul><!-- nav nav-pills nav-stacked category-menu Finish -->
     </div><!-- panel-body Finish -->
@@ -26,11 +22,8 @@
     <div class="panel-body"><!-- panel-body Begin -->
         <ul class="nav nav-pills nav-stacked category-menu"><!-- nav nav-pills nav-stacked category-menu Begin -->
 
-            <li><a href="#">House</a></li>
-            <li><a href="#">Companies</a></li>
-            <li><a href="#">Entertainment</a></li>
-            <li><a href="#">Others</a></li>
-
+        <?php getCats();?>
+        
         </ul><!-- nav nav-pills nav-stacked category-menu Finish -->
     </div><!-- panel-body Finish -->
 
