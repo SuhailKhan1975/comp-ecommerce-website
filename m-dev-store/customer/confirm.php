@@ -11,6 +11,12 @@ if(!isset($_SESSION['customer_email'])){
 include("includes/db.php");
 include("functions/functions.php");
 
+if(isset($_GET['order_id'])){
+    
+    $order_id = $_GET['order_id'];
+    
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +155,7 @@ include("functions/functions.php");
                    
                </div><!-- padding-nav Finish -->
                
-               <a href="cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+               <a href="../cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                    
                    <i class="fa fa-shopping-cart"></i>
                    
@@ -230,7 +236,7 @@ include("functions/functions.php");
                    
                    <h1 align="center"> Please confirm your payment</h1>
                    
-                   <form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form Begin -->
+                   <form action="confirm.php?update_id='<?php echo $order_id;  ?>'" method="post" enctype="multipart/form-data"><!-- form Begin -->
                        
                        <div class="form-group"><!-- form-group Begin -->
                            
