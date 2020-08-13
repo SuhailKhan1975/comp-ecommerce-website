@@ -17,7 +17,16 @@
         <div id="page-wrapper"><!-- #page-wrapper begin -->
             <div class="container-fluid"><!-- container-fluid begin -->
                 
+            <?php
                 
+                if(isset($_GET['dashboard'])){
+                    
+                    include("dashboard.php");
+                    
+            }
+            
+            ?>
+
                 
             </div><!-- container-fluid finish -->
         </div><!-- #page-wrapper finish -->
