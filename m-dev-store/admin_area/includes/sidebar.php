@@ -31,13 +31,13 @@
             
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- dropdown-toggle begin -->
                 
-                <i class="fa fa-user"></i> Mrghie <b class="caret"></b>
+                <i class="fa fa-user"></i> <?php echo $admin_name;  ?> <b class="caret"></b>
                 
             </a><!-- dropdown-toggle finish -->
             
             <ul class="dropdown-menu"><!-- dropdown-menu begin -->
                 <li><!-- li begin -->
-                    <a href="index.php?user_profile"><!-- a href begin -->
+                    <a href="index.php?user_profile=<?php echo $admin_id; ?>"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-user"></i> Profile
                         
@@ -49,7 +49,7 @@
                         
                         <i class="fa fa-fw fa-envelope"></i> Products
                         
-                        <span class="badge">7</span>
+                        <span class="badge"><?php echo $count_products; ?></span>
                         
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
@@ -59,7 +59,7 @@
                         
                         <i class="fa fa-fw fa-users"></i> Customeres
                         
-                        <span class="badge">11</span>
+                        <span class="badge"><?php echo $count_customers; ?></span>
                         
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
@@ -69,7 +69,7 @@
                         
                         <i class="fa fa-fw fa-gear"></i> Product Categories
                         
-                        <span class="badge">4</span>
+                        <span class="badge"><?php echo $count_p_categories; ?></span>
                         
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
@@ -211,7 +211,7 @@
                         <a href="index.php?view_users"> View Users </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?user_profile"> Edit User Profile </a>
+                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit User Profile </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 

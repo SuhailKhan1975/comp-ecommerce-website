@@ -37,7 +37,7 @@
                     </div><!-- col-xs-3 finish -->
                     
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
-                        <div class="huge"> 17 </div>
+                        <div class="huge"> <?php echo $count_products; ?> </div>
                            
                         <div> Products </div>
                         
@@ -77,7 +77,7 @@
                     </div><!-- col-xs-3 finish -->
                     
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
-                        <div class="huge"> 7 </div>
+                        <div class="huge"> <?php echo $count_customers; ?> </div>
                            
                         <div> Customers </div>
                         
@@ -117,7 +117,7 @@
                     </div><!-- col-xs-3 finish -->
                     
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
-                        <div class="huge"> 5 </div>
+                        <div class="huge"> <?php echo $count_p_categories; ?> </div>
                            
                         <div> Product Categories </div>
                         
@@ -157,7 +157,7 @@
                     </div><!-- col-xs-3 finish -->
                     
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
-                        <div class="huge"> 25 </div>
+                        <div class="huge"> <?php echo $count_pending_orders; ?> </div>
                            
                         <div> Orders </div>
                         
@@ -219,50 +219,80 @@
                         </thead><!-- thead finish -->
                         
                         <tbody><!-- tbody begin -->
+                          
+                            <?php 
+                          
+                                $i=0;
+          
+                                $get_order = "select * from pending_orders order by 1 DESC LIMIT 0,5";
+          
+                                $run_order = mysqli_query($con,$get_order);
+          
+                                while($row_order=mysqli_fetch_array($run_order)){
+                                    
+                                    $order_id = $row_order['order_id'];
+                                    
+                                    $c_id = $row_order['customer_id'];
+                                    
+                                    $invoice_no = $row_order['invoice_no'];
+                                    
+                                    $product_id = $row_order['product_id'];
+                                    
+                                    $qty = $row_order['qty'];
+                                    
+                                    $size = $row_order['size'];
+                                    
+                                    $order_status = $row_order['order_status'];
+                                    
+                                    $i++;
+                            
+                            ?>
                            
                             <tr><!-- tr begin -->
-                                <td> 1 </td>
-                                <td> pelanggan@gmail.com </td>
-                                <td> 32sa32 </td>
-                                <td> 24 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
+                               
+                                <td> <?php echo $order_id; ?> </td>
+                                <td>
+                                    
+                                    <?php 
+                                    
+                                        $get_customer = "select * from customers where customer_id='$c_id'";
+                                    
+                                        $run_customer = mysqli_query($con,$get_customer);
+                                    
+                                        $row_customer = mysqli_fetch_array($run_customer);
+                                    
+                                        $customer_email = $row_customer['customer_email'];
+                                    
+                                        echo $customer_email;
+                                    
+                                    ?>
+                                    
+                                </td>
+                                <td> <?php echo $invoice_no; ?> </td>
+                                <td> <?php echo $product_id; ?> </td>
+                                <td> <?php echo $qty; ?> </td>
+                                <td> <?php echo $size; ?> </td>
+                                <td>
+                                    
+                                    <?php 
+                                    
+                                        if($order_status=='pending'){
+                                            
+                                            echo $order_status='pending';
+                                            
+                                        }else{
+                                            
+                                            echo $order_status='Complete';
+                                            
+                                        }
+                                    
+                                    ?>
+                                    
+                                </td>
                                 
                             </tr><!-- tr finish -->
-                           
-                            <tr><!-- tr begin -->
-                                <td> 1 </td>
-                                <td> pelanggan@gmail.com </td>
-                                <td> 32sa32 </td>
-                                <td> 24 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
-                                
-                            </tr><!-- tr finish -->
-                           
-                            <tr><!-- tr begin -->
-                                <td> 1 </td>
-                                <td> pelanggan@gmail.com </td>
-                                <td> 32sa32 </td>
-                                <td> 24 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
-                                
-                            </tr><!-- tr finish -->
-                           
-                            <tr><!-- tr begin -->
-                                <td> 1 </td>
-                                <td> pelanggan@gmail.com </td>
-                                <td> 32sa32 </td>
-                                <td> 24 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
-                                
-                            </tr><!-- tr finish -->
+                            
+                            <?php } ?>
                             
                         </tbody><!-- tbody finish -->
                         
@@ -289,12 +319,12 @@
             <div class="panel-body"><!-- panel-body begin -->
                 <div class="mb-md thumb-info"><!-- mb-md thumb-info begin -->
 
-                    <img src="admin_images/m-dev-info.jpg" alt="admin-thumb-info" class="rounded img-responsive">
+                    <img src="admin_images/<?php echo $admin_image; ?>" alt="<?php echo $admin_image; ?>" class="rounded img-responsive">
                     
                     <div class="thumb-info-title"><!-- thumb-info-title begin -->
                        
-                        <span class="thumb-info-inner"> MrGhie </span>
-                        <span class="thumb-info-type"> Web Developer </span>
+                        <span class="thumb-info-inner"> <?php echo $admin_name; ?> </span>
+                        <span class="thumb-info-type"> <?php echo $admin_job; ?> </span>
                         
                     </div><!-- thumb-info-title finish -->
 
@@ -302,20 +332,18 @@
                 
                 <div class="mb-md"><!-- mb-md begin -->
                     <div class="widget-content-expanded"><!-- widget-content-expanded begin -->
-                        <i class="fa fa-user"></i> <span> Email: </span> mugianto1nd@gmail.com <br/>
-                        <i class="fa fa-flag"></i> <span> Country: </span> Indonesia <br/>
-                        <i class="fa fa-envelope"></i> <span> Contact: </span> 0818-0683-3157 <br/>
+                        <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email; ?> <br/>
+                        <i class="fa fa-flag"></i> <span> Country: </span> <?php echo $admin_country; ?> <br/>
+                        <i class="fa fa-envelope"></i> <span> Contact: </span> <?php echo $admin_contact; ?> <br/>
                     </div><!-- widget-content-expanded finish -->
                     
                     <hr class="dotted short">
                     
-                    <h5 class="text-muted"> About Me</h5>
+                    <h5 class="text-muted"> About Me </h5>
                     
                     <p><!-- p begin -->
                         
-                        This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>
-                        <a href="#"> M-Dev-Media </a> <br/>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.
+                        <?php echo $admin_about; ?>
                         
                     </p><!-- p finish -->
                     
