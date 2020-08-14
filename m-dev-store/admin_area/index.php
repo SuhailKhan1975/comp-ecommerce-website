@@ -116,6 +116,38 @@
                         
                         include("edit_p_cat.php");
                         
+                }   if(isset($_GET['insert_cat'])){
+                        
+                        include("insert_cat.php");
+                        
+                }   if(isset($_GET['view_cats'])){
+                        
+                        include("view_cats.php");
+                        
+                }   if(isset($_GET['edit_cat'])){
+                        
+                        include("edit_cat.php");
+                        
+                }   if(isset($_GET['delete_cat'])){
+                        
+                        include("delete_cat.php");
+                        
+                }   if(isset($_GET['insert_slide'])){
+                        
+                        include("insert_slide.php");
+                        
+                }   if(isset($_GET['view_slides'])){
+                        
+                        include("view_slides.php");
+                        
+                }   if(isset($_GET['delete_slide'])){
+                        
+                        include("delete_slide.php");
+                        
+                }   if(isset($_GET['edit_slide'])){
+                        
+                        include("edit_slide.php");
+                        
                 }
         
                 ?>
