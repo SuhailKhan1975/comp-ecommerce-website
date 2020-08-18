@@ -148,6 +148,22 @@
                         
                         include("edit_slide.php");
                         
+                }   if(isset($_GET['insert_box'])){
+                        
+                        include("insert_box.php");
+                        
+                }   if(isset($_GET['view_boxes'])){
+                        
+                        include("view_boxes.php");
+                        
+                }   if(isset($_GET['delete_box'])){
+                        
+                        include("delete_box.php");
+                        
+                }   if(isset($_GET['edit_box'])){
+                        
+                        include("edit_box.php");
+                        
                 }   if(isset($_GET['view_customers'])){
                         
                         include("view_customers.php");
