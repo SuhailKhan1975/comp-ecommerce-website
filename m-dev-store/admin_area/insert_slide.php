@@ -33,7 +33,7 @@
             
             <div class="panel-body"><!-- panel-body begin -->
                 <form action="" class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal begin -->
-                    <div class="form-group"><!-- form-group begin -->
+                    <div class="form-group"><!-- form-group 1 begin -->
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
@@ -47,8 +47,23 @@
                         
                         </div><!-- col-md-6 finish -->
                     
-                    </div><!-- form-group finish -->
-                    <div class="form-group"><!-- form-group begin -->
+                    </div><!-- form-group 1 finish -->
+                    <div class="form-group"><!-- form-group 2 begin -->
+                    
+                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
+                        
+                            Slide Url
+                        
+                        </label><!-- control-label col-md-3 finish --> 
+                        
+                        <div class="col-md-6"><!-- col-md-6 begin -->
+                        
+                            <input name="slide_url" type="text" class="form-control">
+                        
+                        </div><!-- col-md-6 finish -->
+                    
+                    </div><!-- form-group 2 finish -->
+                    <div class="form-group"><!-- form-group 3 begin -->
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
@@ -62,8 +77,8 @@
                         
                         </div><!-- col-md-6 finish -->
                     
-                    </div><!-- form-group finish -->
-                    <div class="form-group"><!-- form-group begin -->
+                    </div><!-- form-group 3 finish -->
+                    <div class="form-group"><!-- form-group 4 begin -->
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --></label><!-- control-label col-md-3 finish --> 
                         
@@ -73,7 +88,7 @@
                         
                         </div><!-- col-md-6 finish -->
                     
-                    </div><!-- form-group finish -->
+                    </div><!-- form-group 4 finish -->
                 </form><!-- form-horizontal finish -->
             </div><!-- panel-body finish -->
             
@@ -86,6 +101,8 @@
     if(isset($_POST['submit'])){
         
         $slide_name = $_POST['slide_name'];
+        
+        $slide_url = $_POST['slide_url'];
         
         $slide_image = $_FILES['slide_image']['name'];
         
@@ -101,7 +118,7 @@
             
             move_uploaded_file($temp_name,"slides_images/$slide_image");
             
-            $insert_slide = "insert into slider (slide_name,slide_image) values ('$slide_name','$slide_image')";
+            $insert_slide = "insert into slider (slide_name,slide_url,slide_image) values ('$slide_name','$slide_url','$slide_image')";
             
             $run_slide = mysqli_query($con,$insert_slide);
             
