@@ -39,7 +39,7 @@
                             <tr><!-- tr begin -->
                                 <th> Category ID </th>
                                 <th> Category Title </th>
-                                <th> Category Desc </th>
+                                <th> Top Category </th>
                                 <th> Edit Category </th>
                                 <th> Delete Category </th>
                             </tr><!-- tr finish -->
@@ -61,7 +61,7 @@
                                     
                                     $cat_title = $row_cats['cat_title'];
                                     
-                                    $cat_desc = $row_cats['cat_desc'];
+                                    $cat_top = $row_cats['cat_top'];
                                     
                                     $i++;
                             
@@ -70,7 +70,7 @@
                             <tr><!-- tr begin -->
                                 <td> <?php echo $i; ?> </td>
                                 <td> <?php echo $cat_title; ?> </td>
-                                <td width="300"> <?php echo $cat_desc; ?> </td>
+                                <td width="300"> <?php echo $cat_top; ?> </td>
                                 <td> 
                                     <a href="index.php?edit_cat= <?php echo $cat_id; ?> ">
                                         <i class="fa fa-pencil"></i> Edit
