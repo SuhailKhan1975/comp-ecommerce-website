@@ -89,6 +89,8 @@
                                            
                                            $only_price = $row_products['product_price'];
                                            
+                                           $pro_url = $row_products['product_url'];
+                                           
                                            $sub_total = $pro_sale*$pro_qty;
 
                                            $_SESSION['pro_qty'] = $pro_qty;
@@ -107,7 +109,7 @@
                                        
                                        <td>
                                            
-                                           <a href="details.php?pro_id=<?php echo $pro_id; ?>"> <?php echo $product_title; ?> </a>
+                                           <a href="<?php echo $pro_url; ?>"> <?php echo $product_title; ?> </a>
                                            
                                        </td>
                                        
@@ -321,6 +323,8 @@
                     $pro_price = $row_products['product_price'];
             
                     $pro_sale_price = $row_products['product_sale'];
+
+                    $pro_url = $row_products['product_url'];
                     
                     $pro_img1 = $row_products['product_img1'];
                     
@@ -373,7 +377,7 @@
                     
                         <div class='product'>
                         
-                            <a href='details.php?pro_id=$pro_id'>
+                            <a href='$pro_url'>
                             
                                 <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
                             
@@ -389,7 +393,7 @@
                             
                                 <h3>
                         
-                                    <a href='details.php?pro_id=$pro_id'>
+                                    <a href='$pro_url'>
             
                                         $pro_title
             
@@ -405,13 +409,13 @@
                                 
                                 <p class='button'>
                                 
-                                    <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                                    <a class='btn btn-default' href='$pro_url'>
             
                                         View Details
             
                                     </a>
                                 
-                                    <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                                    <a class='btn btn-primary' href='$pro_url'>
             
                                         <i class='fa fa-shopping-cart'></i> Add to Cart
             

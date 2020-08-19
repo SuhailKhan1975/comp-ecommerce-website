@@ -69,6 +69,22 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
+                      <label class="col-md-3 control-label"> Product Url </label> 
+                      
+                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                          
+                          <input name="product_url" type="text" class="form-control" required>
+
+                          <br>
+
+                          <p style="font-weight:bold;font-style:italic;font-size:16px;"> Use Dash '-' for url </p>
+                          
+                      </div><!-- col-md-6 Finish -->
+                       
+                   </div><!-- form-group Finish -->
+                   
+                   <div class="form-group"><!-- form-group Begin -->
+                       
                       <label class="col-md-3 control-label"> Manufacturer </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
@@ -249,11 +265,53 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Product Desc </label> 
+                      <label class="col-md-3 control-label"> Product Descriptions </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <textarea name="product_desc" cols="19" rows="6" class="form-control"></textarea>
+                          <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#descriptions" class="tab_link">
+                                    Product Descriptions
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#features" class="tab_link">
+                                    Product Features
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#videos" class="tab_link">
+                                    Product Videos
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab Contents Start -->
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane fade in active" id="descriptions"> <!-- Tab-pane Start -->
+
+                                <textarea name="product_desc" id="descriptions" class="form-control"></textarea>
+                            
+                            </div> <!-- Tab-pane End -->
+
+                            <div class="tab-pane fade in" id="features"> <!-- Tab-pane Start -->
+
+                                <textarea name="product_features" id="features" class="form-control"></textarea>
+
+                            </div> <!-- Tab-pane End -->
+
+                            <div class="tab-pane fade in" id="videos"> <!-- Tab-pane Start -->
+
+                                <textarea name="product_video" id="videos" class="form-control"></textarea>
+
+                            </div> <!-- Tab-pane End -->
+
+                        </div>
+
+                        <!-- Tab Contents End -->
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -264,8 +322,16 @@
                       <label class="col-md-3 control-label"> Product Label </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
-                          
-                          <input name="product_label" type="text" class="form-control">
+
+                        <select name="product_label">
+                        
+                            <option selected disabled> Select Label Product </option>
+                        
+                            <option value="new">New Product</option>
+                        
+                            <option value="sale">Sale Product</option> 
+
+                        </select>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -304,12 +370,15 @@
 if(isset($_POST['submit'])){
     
     $product_title = $_POST['product_title'];
+    $product_url = $_POST['product_url'];
     $product_cat = $_POST['product_cat'];
     $cat = $_POST['cat'];
     $manufacturer_id = $_POST['manufacturer'];
     $product_price = $_POST['product_price'];
     $product_keywords = $_POST['product_keywords'];
     $product_desc = $_POST['product_desc'];
+    $product_features = $_POST['product_features'];
+    $product_video = $_POST['product_video'];
     $product_sale = $_POST['product_sale'];
     $product_label = $_POST['product_label'];
     
@@ -325,7 +394,7 @@ if(isset($_POST['submit'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc,product_label,product_sale) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc','$product_label','$product_sale')";
+    $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_url,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc,product_features,product_video,product_label,product_sale) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_url','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc','$product_features','$product_video','$product_label','$product_sale')";
     
     $run_product = mysqli_query($con,$insert_product);
     

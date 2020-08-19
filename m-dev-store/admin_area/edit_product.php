@@ -24,6 +24,8 @@
         
         $p_title = $row_edit['product_title'];
         
+        $p_url = $row_edit['product_url'];
+        
         $p_cat = $row_edit['p_cat_id'];
         
         $cat = $row_edit['cat_id'];
@@ -45,6 +47,10 @@
         $p_desc = $row_edit['product_desc'];
         
         $p_label = $row_edit['product_label'];
+
+        $p_features = $row_edit['product_features'];
+
+        $p_video = $row_edit['product_video'];
         
     }
         
@@ -130,6 +136,22 @@
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
                           <input name="product_title" type="text" class="form-control" required value="<?php echo $p_title; ?>">
+                          
+                      </div><!-- col-md-6 Finish -->
+                       
+                   </div><!-- form-group Finish -->
+                   
+                   <div class="form-group"><!-- form-group Begin -->
+                       
+                      <label class="col-md-3 control-label"> Product Url </label> 
+                      
+                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                          
+                          <input name="product_url" type="text" class="form-control" required value="<?php echo $p_url; ?>">
+
+                            <br>
+
+                            <p style="font-weight:bold;font-style:italic;font-size:16px;"> Use Dash '-' for url. | Example: jacket-for-kids </p>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -335,15 +357,59 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Product Desc </label> 
+                      <label class="col-md-3 control-label"> Product Descriptions </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <textarea name="product_desc" cols="19" rows="6" class="form-control">
-                              
-                              <?php echo $p_desc; ?>
-                              
-                          </textarea>
+                          <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#descriptions" class="tab_link">
+                                    Product Descriptions
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#features" class="tab_link">
+                                    Product Features
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#videos" class="tab_link">
+                                    Product Videos
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab Contents Start -->
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane fade in active" id="descriptions"> <!-- Tab-pane Start -->
+
+                                <textarea name="product_desc" id="desc_editor" class="form-control">
+                                    <?php echo $p_desc; ?>
+                                </textarea>
+                            
+                            </div> <!-- Tab-pane End -->
+
+                            <div class="tab-pane fade in" id="features"> <!-- Tab-pane Start -->
+
+                                <textarea name="product_features" id="features_editor" class="form-control">
+                                    <?php echo $p_features; ?>
+                                </textarea>
+
+                            </div> <!-- Tab-pane End -->
+
+                            <div class="tab-pane fade in" id="videos"> <!-- Tab-pane Start -->
+
+                                <textarea rows="10" name="product_video" id="videos" class="form-control">
+                                    <?php echo $p_video; ?>
+                                </textarea>
+
+                            </div> <!-- Tab-pane End -->
+
+                        </div>
+
+                        <!-- Tab Contents End -->
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -354,8 +420,18 @@
                       <label class="col-md-3 control-label"> Product Label </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
-                          
-                          <input name="product_label" type="text" class="form-control" required value="<?php echo $p_label; ?>">
+
+                        <select name="product_label">
+                        
+                              <option disabled> Select Label Product </option>
+                              
+                              <option value="<?php echo $p_label; ?>"> <?php echo $p_label; ?> </option>
+                              
+                                <option value="new">New</option>
+
+                                <option value="sale">Sale</option> 
+
+                        </select>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -384,7 +460,7 @@
 </div><!-- row Finish -->
    
     <script src="js/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea'});</script>
+    <script>tinymce.init({ selector:'#desc_editor, #features_editor'});</script>
 </body>
 </html>
 
@@ -394,6 +470,7 @@
 if(isset($_POST['update'])){
     
     $product_title = $_POST['product_title'];
+    $product_url = $_POST['product_url'];
     $product_cat = $_POST['product_cat'];
     $cat = $_POST['cat'];
     $manufacturer_id = $_POST['manufacturer'];
@@ -402,6 +479,8 @@ if(isset($_POST['update'])){
     $product_keywords = $_POST['product_keywords'];
     $product_desc = $_POST['product_desc'];
     $product_label = $_POST['product_label'];
+    $product_features = $_POST['product_features'];
+    $product_video = $_POST['product_video'];
 
     if(is_uploaded_file($_FILES['file']['tmp_name'])){
 
@@ -419,7 +498,7 @@ if(isset($_POST['update'])){
         move_uploaded_file($temp_name2,"product_images/$product_img2");
         move_uploaded_file($temp_name3,"product_images/$product_img3");
         
-        $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_keywords='$product_keywords',product_desc='$product_desc',product_sale='$product_sale',product_label='$product_label' where product_id='$p_id'";
+        $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_keywords='$product_keywords',product_desc='$product_desc',product_sale='$product_sale',product_label='$product_label',product_features='$product_features',product_video='$product_video' where product_id='$p_id'";
         
         $run_product = mysqli_query($con,$update_product);
         
@@ -435,7 +514,7 @@ if(isset($_POST['update'])){
 
         // work when no update image
         
-        $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_price='$product_price',product_keywords='$product_keywords',product_desc='$product_desc',product_sale='$product_sale',product_label='$product_label' where product_id='$p_id'";
+        $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_price='$product_price',product_keywords='$product_keywords',product_desc='$product_desc',product_sale='$product_sale',product_label='$product_label',product_features='$product_features',product_video='$product_video' where product_id='$p_id'";
         
         $run_product = mysqli_query($con,$update_product);
         
